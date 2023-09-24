@@ -6,8 +6,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+// Need to add helpers folder in utils
 //const helpers = require('./utils/helpers');
-
+// need to delete once I add this to seeds
+const User = require('./models/User')
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -27,7 +29,7 @@ const sess = {
 };
 
 app.use(session(sess));
-
+// could add helpers inside curly
 const hbs = exphbs.create({  });
 
 app.engine('handlebars', hbs.engine);
