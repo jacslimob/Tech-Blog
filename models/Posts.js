@@ -1,1 +1,0 @@
-// post, title, date created also needs a post id, and possibly a place for comment id also needs to reference user id
