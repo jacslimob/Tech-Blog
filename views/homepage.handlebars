@@ -1,10 +1,27 @@
-<!--Need to figure out what posts are called-->
-{{#each posts as |post|}}
-<!--Loop over existing blog posts-->
-{{post.title}}
-{{post.content}}
-{{post.date_created}}
-<h3>The post title with href</h3>
-<p>small description</p>
-<p>footer with date created</p>
+<div class="p-8 text-3xl text-lime-900 font-bold">
+    All Posts:
+</div>
+{{#each posts}}
+<div class="p-4">
+    
+    <div class="box-content h-auto w-1/2 p-10 rounded-lg border-2 border-solid  border-lime-900 text-lime-900 bg-lime-400 hover:bg-lime-300 hover:text-lime-900">
+    <a href="/post/{{id}}"/>
+        <div class="text-3xl underline pb-4">
+        {{title}}
+
+        </div>
+        <div class="bg-gradient-to-r from-cyan-800 to-cyan-900 h-px mt-2 mb-2"></div>
+        <div class="flex text-lg pl-8">
+            -- {{content}}
+        </div>
+        <div class="bg-gradient-to-r from-cyan-800 to-cyan-900 h-px mt-2 mb-2"></div>
+        
+        <div class="flex justify-end text-sm">
+            Created by: {{user.name}} on {{format_date date_created}}
+        </div>
+        
+    </div>
+</div>
+
+
 {{/each}}

@@ -1,4 +1,61 @@
-<h1>Welcome {{user.name}}</h1>
-<!--Loop over posts created by this user-->
-<p>Current Posts by all users</p>
-<button>Add Post</button>
+<div class=" flex p-8">
+    <div class="text-3xl text-lime-900 font-bold pr-28">
+        Welcome, {{user.name}}
+    </div>
+    <button id="myBtn" class="flex items-center rounded-full text-lime-300 px-4 bg-lime-800 hover:bg-lime-300 hover:text-lime-800">
+        Add Post
+    </button>
+</div>
+
+{{#if user.posts}}
+{{#each user.posts}}
+<div class="p-4">
+    
+    <div class="box-content h-auto w-1/2 p-10 rounded-lg border-2 border-solid  border-lime-900  text-lime-900 bg-lime-400 hover:bg-lime-300 hover:text-lime-900">
+    <a href="/dashPost/{{id}}">
+        <div class="text-3xl underline pb-4">
+        {{title}}
+
+        </div>
+        <div class="bg-lime-800 h-px mt-2 mb-2"></div>
+        <div class="flex text-lg pl-8">
+            -- {{content}}
+        </div>
+        <div class="bg-lime-800 h-px mt-2 mb-2"></div>
+        {{!-- I need to make a helper for the date --}}
+        <div class="flex justify-end text-sm">
+            Created by: 
+            {{../user.name}}
+            on {{format_date date_created}}
+        </div>
+     </a>   
+    </div>
+    
+</div>
+{{/each}}
+{{/if}}
+
+<div id="modal" class="modal p-4">
+    <div class="box-content h-auto w-1/2 p-10 rounded-lg border-2 border-solid  border-lime-900 text-lime-900 bg-lime-400 mt-48">
+        <form class="new-project-form">
+        <div class="text-3xl underline pb-4">
+            Title: <input id="post-name" class="px-4">
+
+        </div>
+        <div class="bg-lime-800 h-px mt-2 mb-2"></div>
+        <div class="flex text-lg pl-8">
+            -- content: <input id="post-content" class="px-4">
+        </div>
+        <div class="bg-lime-800 h-px mt-2 mb-2"></div>
+        
+        <div class="flex justify-end text-sm">
+            <button id="submit">
+                submit
+            </button>
+        </div>
+        </form>
+    </div>
+
+</div>
+
+<script src="/js/post.js"></script>

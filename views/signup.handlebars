@@ -1,25 +1,31 @@
 <div class="flex justify-center mt-8 h-screen">
     <div class="box-content h-3/5 w-1/2 p-10">
         <div class="flex justify-center text-3xl">
-            Login
+            Sign Up
         </div>
-        <form class="login-form">
+        <form class="signup-form">
             <div class="flex justify-center w-full pt-8">
                 <div class="text-xl pt-4 w-3/4">
+                    <p class="pb-2">Username:</p>
+                    <input id="name-signup" class="name-signup p-1 border-2 border-black w-full">
+                </div>
+            </div>
+            <div class="flex justify-center w-full pt-4">
+                <div class="text-xl pt-4 w-3/4">
                     <p class="pb-2">Email:</p>
-                    <input id="email-login" class="p-1 border-2 border-black w-full">
+                    <input id="email-signup" class="email-signup p-1 border-2 border-black w-full">
                 </div>
             </div>
             <div class="flex justify-center w-full pt-4">
                 <div class="text-xl pt-4 w-3/4">
                     <p>Password:</p>
-                    <input type="password" id="password-login" class="w-full p-1 border-2 border-black">
+                    <input type="password" id="password-signup" class="password-signup w-full p-1 border-2 border-black">
                 </div>
             </div>
             <div>
                 <div class="flex justify-center text-base pt-2">
-                    <a href="/signup">
-                    <p class="underline underline-offset-1">Need an Account? Sign up</p>
+                    <a href="/login">
+                    <p class="underline underline-offset-1">Already have an Account? Log in</p>
                 </div>
             </div>
             <div class="flex justify-center pt-6 text-white text-lg">
@@ -31,4 +37,4 @@
     </div>
 </div>
 
-<script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>

@@ -1,41 +1,55 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog</title>
-  <link rel="stylesheet" href="">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Banter</title>
+    <link href="/output.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/37e2379272.js" crossorigin="anonymous"></script>
+  </head>
 
-<body>
-  <header>
+  <body class="mx-4 bg-green-300">
+    <header class="flex justify-between items-center text-lime-200 text-6xl bg-lime-800 h-32">
+      <div></div>
+      <div>B</div><div>i</div><div>n</div><div>a</div><div>r</div><div>y</div>
+      <div></div>
+      <div>B</div><div>a</div><div>n</div><div>t</div><div>e</div><div>r</div>
+      <div></div>
+    </header>
+    <nav class="grid grid-cols-3 bg-lime-300 text-xl">
 
-    <h1>Binary Banter</h1>
+      <div class="col-span-2 flex justify-start mx-24">
+        <a href="/" class="underline decoration-lime-800 text-lime-800 px-4  hover:bg-lime-800 hover:text-lime-300 hover:decoration-lime-300">Home</a>
+        {{#if logged_in}}
+        <a href="/dashboard" class="underline decoration-lime-800 text-lime-800 px-4  hover:bg-lime-800 hover:text-lime-300 hover:decoration-lime-300">Dashboard</a>
+        {{/if}}
+      </div>
 
-    <nav>
-    <a href="/">Home</a>
-    {{#if logged_in}}
-    <a href="/dashboard">Dashboard</a>    
-    <a href="/" id = "logout">Logout</a>    
-    {{else}}  
-    <a href="/login">Login</a>
-    {{/if}}
+      <div class="flex justify-end mx-28">
+        {{#if logged_in}}
+        <a href="/" id="logout" class="underline decoration-lime-800 text-lime-800 px-4  hover:bg-lime-800 hover:text-lime-300 hover:decoration-lime-300">Sign Out</a>
+        {{else}}
+        <a href="/login" class="underline decoration-lime-800 text-lime-800 px-4  hover:bg-lime-800 hover:text-lime-300 hover:decoration-lime-300">Sign In</a>
+        {{/if}}
+      </div>
+
     </nav>
+    
 
-  </header>
+    <main class="mx-4">
+    {{{body}}}
+    </main>
 
-  <main>
-    {{{ body }}}
-  </main>
-  
-  <footer>    
-      
-  </footer>
-
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>
